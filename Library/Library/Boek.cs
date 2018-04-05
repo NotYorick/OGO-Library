@@ -8,5 +8,8 @@ namespace Library
 {
     class Boek : Artikel
     {
+
+        private String naam;
+        private String ID;
     }
 }
