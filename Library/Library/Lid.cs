@@ -18,14 +18,9 @@ namespace Library
         private double leengeld;
         private double boetes;
 
-        public Lid()
-        {
-
-        }
-
         public Lid(String voornaam, String achternaam, int klantNr)
         {
-            
+  
         }
 
         public void BoeteBetalen()
@@ -62,5 +57,25 @@ namespace Library
         {
             return voornaam + achternaam;
         }
+
+        public List<Artikel> GetLeenArtikelen()
+        {
+            if (leenartikelen.Count == 0)
+            {
+                return null;
+            }
+            else
+            {
+                List<Artikel> lijst = leenartikelen.Cast<Artikel>().ToList();
+                return lijst;
+            }
+            
+            
+        }
+        public int GetKlantNr()
+        {
+            return klantnr;
+        }
+
     }
 }

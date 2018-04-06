@@ -20,6 +20,9 @@ namespace Library
             artikelen = new ArrayList();
             ingeleverdeArtikelen = new ArrayList();
 
+            leden.Add(new Lid("Daan", "Smits", 1));
+            leden.Add(new Lid("Daan", "Ss", 2));
+
             artikelen.Add(new Roman("Harry potter",1,2003));
             artikelen.Add(new Roman("Cool", 2, 2012));
             artikelen.Add(new Roman("Daan3", 3, 2000));
@@ -86,6 +89,18 @@ namespace Library
         {
             return null;
         }
+
+        public Lid GetLid(int lidNr)
+        {
+            foreach (Lid lid in leden)
+                    {
+                        if (lid.GetKlantNr() == lidNr)
+                        {
+                            return lid;
+                        }
+                    }
+            return null;
+        } 
 
         public List<Artikel> GetAllArtikelen()
         {
