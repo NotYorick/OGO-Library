@@ -23,12 +23,12 @@ namespace Library
 
         public double BerekenBoetes()
         {
-            
+            return 0;
         }
 
         public double BerekenLeengeld()
         {
-            
+            return 0;
         }
 
         public Artikel GetArtikel()

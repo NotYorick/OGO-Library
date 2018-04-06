@@ -15,6 +15,7 @@ namespace Library
         //enum GetStatus();
         void ChangeStatus();
         void AddReserveringen();
+        int GetArtikelNr();
 
     }
 }

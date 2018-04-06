@@ -10,11 +10,12 @@ namespace Library
     class Boek : Artikel
     {
 
-        private int ArtikelNr;
-        private String Naam;
-        private int Jaar;
-        private ArrayList Reserveringen;
-        private enum Status
+        private int artikelNr;
+        private String naam;
+        private int jaar;
+        private ArrayList reserveringen;
+        private Status stat;
+        public enum Status
         {
             Aanwezig,
             Afwezig
@@ -22,34 +23,39 @@ namespace Library
 
         protected Boek(String naam, int artikelNr, int jaar)
         {
-            this.Naam = naam;
-            this.ArtikelNr = artikelNr;
-            this.Jaar = jaar;
+            this.naam = naam;
+            this.artikelNr = artikelNr;
+            this.jaar = jaar;
         }
 
         public String getName()
         {
-            return Naam;
+            return naam;
         }
 
         public void setName(String set)
         {
-            Naam = set;
+            naam = set;
         }
 
         public void SetYear(int set)
         {
-            Jaar = set;
+            jaar = set;
         }
 
         public int GetYear()
         {
-            return Jaar;
+            return jaar;
         }
 
-        public Status ChooseCase()
+        public int GetArtikelNr()
         {
-            return Stat;
+            return artikelNr;
+        }
+
+        public Status GetStatus()
+        {
+            return stat;
         }
 
         public void ChangeStatus()

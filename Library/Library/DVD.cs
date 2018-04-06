@@ -47,6 +47,12 @@ namespace Library
         {
             return jaar;
         }
+
+        public int GetArtikelNr()
+        {
+            return artikelNr;
+        }
+
         //enum GetStatus();
         public void ChangeStatus()
         {

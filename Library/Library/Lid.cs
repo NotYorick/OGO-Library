@@ -40,12 +40,12 @@ namespace Library
 
         public bool ArtikelLenen(String artikelnummer)
         {
-            
+            return false;
         }
 
         public bool Inleveren(Lening lening)
         {
-            
+            return false;
         }
 
         public void SetVoornaam()
@@ -60,7 +60,7 @@ namespace Library
 
         public String GetName()
         {
-            
+            return voornaam + achternaam;
         }
     }
 }

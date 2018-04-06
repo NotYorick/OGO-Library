@@ -59,6 +59,7 @@
       <DependentUpon>GUI.cs</DependentUpon>
     </Compile>
     <Compile Include="Klasiek.cs" />
+    <Compile Include="Lening.cs" />
     <Compile Include="Lid.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="Populair.cs" />
