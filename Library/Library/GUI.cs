@@ -16,11 +16,18 @@ namespace Library
         {
             InitializeComponent();
             Main main = new Main();
-            tabUser.Click += new System.EventHandler(main.TabUserEvent);
-            tabAdmin.Click += new System.EventHandler(main.TabAdminEvent);
-            tabAccount.Click += new System.EventHandler(main.TabAccountantEvent);
+
+            #region EventHandlers
+            tabUser.Click += new System.EventHandler(TabUserEvent);
+            tabAdmin.Click += new System.EventHandler(TabAdminEvent);
+            tabAccount.Click += new System.EventHandler(TabAccountantEvent);
+        
+
+            #endregion
+
         }
 
+        #region Events
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -45,5 +52,34 @@ namespace Library
         {
 
         }
+
+        private void GUI_Load_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label21_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        public void TabUserEvent(object sender, EventArgs e)
+        {
+
+        }
+
+        public void TabAdminEvent(object sender, EventArgs e)
+        {
+
+        }
+
+        public void TabAccountantEvent(object sender, EventArgs e)
+        {
+
+        }
+
+
+        #endregion
+
     }
 }

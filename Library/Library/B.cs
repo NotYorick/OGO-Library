@@ -6,7 +6,25 @@ using System.Threading.Tasks;
 
 namespace Library
 {
-    class B :DVD
+    class B : DVD
     {
+
+        private double prijs;
+        private int maxLeenDagen;
+
+        public B(String naam, int artikelNr, int jaar) : base(naam,artikelNr,jaar)
+        {
+          
+        }
+
+        public double GetPrijs()
+        {
+            return prijs;
+        }
+
+        public int GetLeenDagen()
+        {
+            return maxLeenDagen;
+        }
     }
 }

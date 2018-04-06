@@ -82,5 +82,10 @@ namespace SilversAwesomeApp
 
             UpdateDataSet();
         }
+
+        private void SilversAmazingForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

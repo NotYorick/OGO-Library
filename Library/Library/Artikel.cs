@@ -8,5 +8,13 @@ namespace Library
 {
     interface Artikel
     {
+        String getName();
+        void setName( String set);
+        void SetYear(int set);
+        int GetYear();
+        //enum GetStatus();
+        void ChangeStatus();
+        void AddReserveringen();
+
     }
 }
