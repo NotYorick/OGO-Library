@@ -7,15 +7,15 @@ using System.Collections;
 
 namespace Library
 {
-    class Boek : Artikel
+    abstract class Boek : Artikel
     {
 
         private int artikelNr;
         private String naam;
         private int jaar;
         private ArrayList reserveringen;
-        private Status stat;
-        public enum Status
+        private status stat;
+        public enum status
         {
             Aanwezig,
             Afwezig
@@ -26,6 +26,8 @@ namespace Library
             this.naam = naam;
             this.artikelNr = artikelNr;
             this.jaar = jaar;
+            stat = status.Aanwezig;
+            
         }
 
         public String getName()
@@ -53,18 +55,32 @@ namespace Library
             return artikelNr;
         }
 
-        public Status GetStatus()
+        public String GetStatus()
         {
-            return stat;
+            return stat.ToString();
         }
 
         public void ChangeStatus()
         {
-
+            if (stat == status.Aanwezig)
+            {
+                stat = status.Afwezig;
+            }
+            else if (stat == status.Afwezig)
+            {
+                stat = status.Aanwezig; ;
+            }
         }
+
+        public abstract double GetPrijs();
+        
+
         public void AddReserveringen()
         {
 
         }
+
+        public abstract int GetLeenDagen();
+
     }
 }

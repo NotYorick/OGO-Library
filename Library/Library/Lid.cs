@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Collections;
+using System.Diagnostics;
 
 namespace Library
 {
@@ -20,7 +21,7 @@ namespace Library
 
         public Lid(String voornaam, String achternaam, int klantNr)
         {
-  
+            leenartikelen = new ArrayList();
         }
 
         public void BoeteBetalen()
@@ -33,14 +34,17 @@ namespace Library
             
         }
 
-        public bool ArtikelLenen(String artikelnummer)
+        public bool ArtikelLenen(Artikel artikel)
         {
-            return false;
+            Lening lening = new Lening(artikel);
+            leenartikelen.Add(lening);
+            return true;
         }
 
         public bool Inleveren(Lening lening)
         {
-            return false;
+            leenartikelen.Remove(lening);
+            return true;
         }
 
         public void SetVoornaam()
@@ -53,24 +57,32 @@ namespace Library
             
         }
 
+        public double GetKosten()
+        {
+            return boetes + leengeld;
+        }
+
+        public double GetBoete()
+        {
+            foreach (Lening len in leenartikelen )
+            {
+                boetes += len.BerekenBoetes();
+            }
+            return boetes;
+        }
+
         public String GetName()
         {
             return voornaam + achternaam;
         }
 
-        public List<Artikel> GetLeenArtikelen()
+        public List<Lening> GetLeenArtikelen()
         {
-            if (leenartikelen.Count == 0)
-            {
-                return null;
-            }
-            else
-            {
-                List<Artikel> lijst = leenartikelen.Cast<Artikel>().ToList();
-                return lijst;
-            }
             
-            
+            List<Lening> lijst = leenartikelen.Cast<Lening>().ToList();
+           
+            return lijst;
+                      
         }
         public int GetKlantNr()
         {

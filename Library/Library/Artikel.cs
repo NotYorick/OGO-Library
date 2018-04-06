@@ -12,10 +12,12 @@ namespace Library
         void setName( String set);
         void SetYear(int set);
         int GetYear();
-        //enum GetStatus();
+        String GetStatus(); 
         void ChangeStatus();
+        double GetPrijs();
         void AddReserveringen();
         int GetArtikelNr();
+        int GetLeenDagen();
 
     }
 }

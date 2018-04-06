@@ -15,7 +15,8 @@ namespace Library
         private String naam;
         private int jaar;
         private ArrayList reserveringen;
-        enum status
+        private status stat;
+        public enum status
         {
             Aanwezig,
             Afwezig
@@ -26,6 +27,7 @@ namespace Library
             this.naam = naam;
             this.artikelNr = artikelNr;
             this.jaar = jaar;
+            stat = status.Aanwezig;
         }
 
         public String getName()
@@ -48,16 +50,33 @@ namespace Library
             return jaar;
         }
 
+        public abstract double GetPrijs();
+        
+
         public int GetArtikelNr()
         {
             return artikelNr;
         }
 
-        //enum GetStatus();
+        public String GetStatus()
+        {
+            return stat.ToString();
+        }
+
         public void ChangeStatus()
         {
+            if (stat == status.Aanwezig)
+            {
+                stat = status.Afwezig;
+            }else if (stat == status.Afwezig)
+            {
+                stat = status.Aanwezig;;
+            }
             
         }
+
+        public abstract int GetLeenDagen();
+
         public void AddReserveringen()
         {
             

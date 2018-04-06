@@ -17,12 +17,12 @@ namespace Library
 
         }
 
-        public double GetPrijs()
+        public override double GetPrijs()
         {
             return prijs;
         }
 
-        public int GetLeenDagen()
+        public override int GetLeenDagen()
         {
             return maxLeenDagen;
         }

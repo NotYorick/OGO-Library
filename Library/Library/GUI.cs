@@ -18,6 +18,7 @@ namespace Library
         {
             InitializeComponent();
             main = new Main();
+           
             UpdateDataset();
 
 
@@ -35,13 +36,20 @@ namespace Library
 
         public void UpdateDataset()
         {
+            //Full list
             List<Artikel> data = main.GetAllArtikelen();
             listBox4.DisplayMember = "naam";
             listBox4.DataSource = data;
 
-            List<Artikel> data_leen = main.GetLid(1).GetLeenArtikelen();
-            listBox1.DisplayMember = "naam";
+            //Lening
+            Lid lid = main.GetLid(0);       
+            List<Lening> test = lid.GetLeenArtikelen();
+            int counter = test.Count;
+            
+            List<Lening> data_leen = main.GetLid(0).GetLeenArtikelen();
             listBox1.DataSource = data_leen;
+            
+            
             
 
         }
@@ -50,7 +58,7 @@ namespace Library
         private void listBox4_SelectedIndexChanged(object sender, EventArgs e)
         {
             
-            var selectedItem = (Artikel)listBox4.SelectedItem;
+            var selectedItem = (dynamic)listBox4.SelectedItem;
             label24.Text = selectedItem.getName();
             label25.Text = selectedItem.GetArtikelNr().ToString();
             label27.Text = selectedItem.GetYear().ToString();
@@ -63,16 +71,47 @@ namespace Library
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
-            var selectedItem = (Artikel)listBox1.SelectedItem;
-            label24.Text = selectedItem.getName();
-            label25.Text = selectedItem.GetArtikelNr().ToString();
-            label27.Text = selectedItem.GetYear().ToString();
-
-
-
-
+            var selectedItem = (dynamic)listBox1.SelectedItem;
+            label24.Text = selectedItem.GetArtikel().getName();
+            label25.Text = selectedItem.GetArtikel().GetArtikelNr().ToString();
+            label27.Text = selectedItem.GetArtikel().GetYear().ToString();
         }
 
+        //Leen Button
+        private void button13_Click(object sender, EventArgs e)
+        {
+            var selectedItem = (dynamic)listBox4.SelectedItem;
+            if (selectedItem.GetStatus() == "Aanwezig")
+            {
+                main.GetLid(0).ArtikelLenen(selectedItem);
+                selectedItem.ChangeStatus();
+                
+
+                UpdateDataset();
+            }
+            
+        }
+        //inlever button
+        private void button2_Click(object sender, EventArgs e)
+        {
+            var selectedItem = (dynamic)listBox1.SelectedItem;
+            if (main.GetLid(0).GetBoete() > 0)
+            {
+                //activeer panel boete!!
+                label20.Text = main.GetLid(0).GetBoete().ToString();
+                panel1.Visible = true;
+            }
+            else
+            {
+                main.GetLid(0).Inleveren(selectedItem);
+            }
+            UpdateDataset();
+        }
+        //Volgende dag button
+        private void button15_Click(object sender, EventArgs e)
+        {
+            main.NextDay();
+        }
 
         private void GUI_Load(object sender, EventArgs e)
         {
@@ -120,7 +159,14 @@ namespace Library
         }
 
 
+
+
+
         #endregion
 
+        private void label20_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

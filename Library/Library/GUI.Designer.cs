@@ -96,6 +96,7 @@
             this.label29 = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
+            this.button15 = new System.Windows.Forms.Button();
             this.TabAccountant.SuspendLayout();
             this.tabUser.SuspendLayout();
             this.panel7.SuspendLayout();
@@ -167,6 +168,7 @@
             this.button13.TabIndex = 9;
             this.button13.Text = "Leen";
             this.button13.UseVisualStyleBackColor = true;
+            this.button13.Click += new System.EventHandler(this.button13_Click);
             // 
             // label21
             // 
@@ -197,6 +199,7 @@
             this.label20.Size = new System.Drawing.Size(87, 17);
             this.label20.TabIndex = 10;
             this.label20.Text = "Hoeveelheid";
+            this.label20.Click += new System.EventHandler(this.label20_Click);
             // 
             // button3
             // 
@@ -234,8 +237,9 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 5;
-            this.button2.Text = "button2";
+            this.button2.Text = "Lever in";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // label2
             // 
@@ -267,6 +271,7 @@
             // 
             // tabAdmin
             // 
+            this.tabAdmin.Controls.Add(this.button15);
             this.tabAdmin.Controls.Add(this.panel6);
             this.tabAdmin.Controls.Add(this.panel5);
             this.tabAdmin.Controls.Add(this.panel4);
@@ -805,6 +810,16 @@
             this.label31.TabIndex = 16;
             this.label31.Text = "Naam:";
             // 
+            // button15
+            // 
+            this.button15.Location = new System.Drawing.Point(31, 245);
+            this.button15.Name = "button15";
+            this.button15.Size = new System.Drawing.Size(116, 33);
+            this.button15.TabIndex = 12;
+            this.button15.Text = "Volgende dag";
+            this.button15.UseVisualStyleBackColor = true;
+            this.button15.Click += new System.EventHandler(this.button15_Click);
+            // 
             // GUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -912,6 +927,7 @@
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.Button button15;
     }
 }
 

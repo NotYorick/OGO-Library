@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Collections;
+using System.Diagnostics;
 
 namespace Library
 {
@@ -20,6 +21,7 @@ namespace Library
             artikelen = new ArrayList();
             ingeleverdeArtikelen = new ArrayList();
 
+            leden.Add(new Lid("HENK", "Sts", 0));
             leden.Add(new Lid("Daan", "Smits", 1));
             leden.Add(new Lid("Daan", "Ss", 2));
 
@@ -77,7 +79,15 @@ namespace Library
 
         public void NextDay()
         {
-            
+            foreach (Lid lid in leden)
+            {
+                List<Lening> temp =  lid.GetLeenArtikelen();
+                foreach (Lening len in temp)
+                {
+                    len.IncrementDagen();
+                }
+                lid.GetBoete();
+            }
         }
 
         public void StuurBericht(String klantNr)
@@ -96,6 +106,7 @@ namespace Library
                     {
                         if (lid.GetKlantNr() == lidNr)
                         {
+                            
                             return lid;
                         }
                     }
@@ -104,7 +115,9 @@ namespace Library
 
         public List<Artikel> GetAllArtikelen()
         {
+           
             List<Artikel> lijst = artikelen.Cast<Artikel>().ToList();
+         
             return lijst;
         }
 
