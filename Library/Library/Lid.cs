@@ -68,7 +68,18 @@ namespace Library
             {
                 boetes += len.BerekenBoetes();
             }
+            Debug.WriteLine("boete:" + boetes);
             return boetes;
+        }
+
+        public double GetLeen()
+        {
+            foreach (Lening len in leenartikelen)
+            {
+                leengeld += len.BerekenLeengeld();
+            }
+            Debug.WriteLine("leen:" + leengeld);
+            return leengeld;
         }
 
         public String GetName()

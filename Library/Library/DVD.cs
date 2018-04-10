@@ -51,7 +51,8 @@ namespace Library
         }
 
         public abstract double GetPrijs();
-        
+
+        public abstract double BerekenBoete(int dagen);
 
         public int GetArtikelNr()
         {

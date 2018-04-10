@@ -28,6 +28,8 @@ namespace Library
             tabAccount.Click += new System.EventHandler(TabAccountantEvent);
             listBox4.SelectedIndexChanged += new System.EventHandler(listBox4_SelectedIndexChanged);
             listBox1.SelectedIndexChanged += new System.EventHandler(listBox1_SelectedIndexChanged);
+            listBox2.SelectedIndexChanged += new System.EventHandler(listBox2_SelectedIndexChanged);
+            listBox3.SelectedIndexChanged += new System.EventHandler(listBox3_SelectedIndexChanged);
 
 
             #endregion
@@ -40,17 +42,17 @@ namespace Library
             List<Artikel> data = main.GetAllArtikelen();
             listBox4.DisplayMember = "naam";
             listBox4.DataSource = data;
+            listBox3.DataSource = data;
 
-            //Lening
+            //Lening per lid
             Lid lid = main.GetLid(0);       
             List<Lening> test = lid.GetLeenArtikelen();
-            int counter = test.Count;
-            
+
+            List<Lid> leden = main.GetLeden();
+            listBox2.DataSource = leden;
+
             List<Lening> data_leen = main.GetLid(0).GetLeenArtikelen();
             listBox1.DataSource = data_leen;
-            
-            
-            
 
         }
 
@@ -62,9 +64,26 @@ namespace Library
             label24.Text = selectedItem.getName();
             label25.Text = selectedItem.GetArtikelNr().ToString();
             label27.Text = selectedItem.GetYear().ToString();
-            
 
+        }
 
+        private void listBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            var selectedItem = (dynamic)listBox4.SelectedItem;
+            label24.Text = selectedItem.getName();
+            label25.Text = selectedItem.GetArtikelNr().ToString();
+            label27.Text = selectedItem.GetYear().ToString();
+
+        }
+
+        private void listBox3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            var selectedItem = (dynamic)listBox4.SelectedItem;
+            label24.Text = selectedItem.getName();
+            label25.Text = selectedItem.GetArtikelNr().ToString();
+            label27.Text = selectedItem.GetYear().ToString();
 
         }
 
@@ -104,6 +123,14 @@ namespace Library
             else
             {
                 main.GetLid(0).Inleveren(selectedItem);
+                foreach (Artikel art in main.GetAllArtikelen())
+                {
+                    if (art.GetArtikelNr() == selectedItem.GetArtikel().GetArtikelNr())
+                    {
+                        art.ChangeStatus();
+                    }
+                   
+                }
             }
             UpdateDataset();
         }
@@ -111,6 +138,22 @@ namespace Library
         private void button15_Click(object sender, EventArgs e)
         {
             main.NextDay();
+            double inkomen = 0;
+            double inkomen_leen = 0;
+            double inkomen_boete = 0;
+            foreach (Lid li in main.GetLeden())
+            {
+
+
+                inkomen += li.GetKosten();
+                inkomen_boete += li.GetBoete();
+                inkomen_leen += li.GetLeen();
+            }
+
+            label17.Text = "Totale inkomen: " + inkomen.ToString();
+            label16.Text = "Totale Boetes: " + inkomen_boete.ToString();
+            label18.Text = "Totale Leengeld: " + inkomen_leen.ToString();
+        
         }
 
         private void GUI_Load(object sender, EventArgs e)

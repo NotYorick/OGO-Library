@@ -12,10 +12,11 @@ namespace Library
         private int aantalDagenGeleend;
         public Artikel artikel;
         private double boete;
+        private bool betaald;
 
         public Lening(Artikel artikel)
         {
-
+            betaald = false;
             aantalDagenGeleend = 0;
             this.artikel = artikel;
         }
@@ -29,16 +30,20 @@ namespace Library
         {
             if (aantalDagenGeleend > artikel.GetLeenDagen())
             {
-                // voeg bereken boete toe aan alle classes...
-                boete = 0;
-                
+                boete = artikel.BerekenBoete(aantalDagenGeleend - artikel.GetLeenDagen());
             }
             return boete;
         }
 
         public double BerekenLeengeld()
         {
-            return artikel.GetPrijs();
+            if (!betaald)
+            {
+                betaald = true;
+                Debug.WriteLine("Leen:" + artikel.GetPrijs());
+                return artikel.GetPrijs();
+            }
+            return 0;
         }
 
         public Artikel GetArtikel()

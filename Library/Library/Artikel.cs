@@ -18,6 +18,7 @@ namespace Library
         void AddReserveringen();
         int GetArtikelNr();
         int GetLeenDagen();
+        double BerekenBoete(int dagen);
 
     }
 }

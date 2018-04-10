@@ -60,6 +60,8 @@ namespace Library
             return stat.ToString();
         }
 
+        public abstract double BerekenBoete(int dagen);
+
         public void ChangeStatus()
         {
             if (stat == status.Aanwezig)

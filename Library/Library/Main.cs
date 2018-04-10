@@ -86,7 +86,7 @@ namespace Library
                 {
                     len.IncrementDagen();
                 }
-                lid.GetBoete();
+                
             }
         }
 
@@ -126,7 +126,13 @@ namespace Library
             
         }
 
-        
+        public List<Lid> GetLeden()
+        {
+            List<Lid> lijst = leden.Cast<Lid>().ToList();
+            return lijst;
+        }
+
+
 
     }
 }

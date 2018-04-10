@@ -74,6 +74,8 @@ namespace Library
 
         public abstract int GetLeenDagen();
 
+        public abstract double BerekenBoete(int dagen);
+
         public void AddReserveringen()
         {
 

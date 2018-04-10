@@ -8,8 +8,9 @@ namespace Library
 {
     class Roman : Boek
     {
-        private double prijs;
-        private int maxLeenDagen;
+        private const double prijs = 0;
+        private const int maxLeenDagen = 21;
+        private const double boete = 0.25;
 
         public Roman(String naam, int artikelNr, int jaar) : base(naam,artikelNr,jaar)
         {
@@ -24,6 +25,11 @@ namespace Library
         public override int GetLeenDagen()
         {
             return maxLeenDagen;
+        }
+
+        public override double BerekenBoete(int dagen)
+        {
+            return dagen * boete;
         }
     }
 }
