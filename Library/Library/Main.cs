@@ -97,7 +97,15 @@ namespace Library
 
         public Artikel GetArtikel(int artNr)
         {
+            foreach(Artikel art in artikelen)
+            {
+                if (art.GetArtikelNr() == artNr)
+                {
+                    return art;
+                }
+            }
             return null;
+
         }
 
         public Lid GetLid(int lidNr)

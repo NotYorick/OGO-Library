@@ -243,5 +243,15 @@ namespace Library
         {
 
         }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+            var selectedItem = (dynamic)listBox4.SelectedItem;
+            Artikel curArt = main.GetArtikel(selectedItem.getArtikelNr());
+
+            Lid lid = main.GetLid(0);
+
+            lid.Reserveren(curArt);
+        }
     }
 }
