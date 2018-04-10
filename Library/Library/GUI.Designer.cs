@@ -101,6 +101,16 @@
             this.label18 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
+<<<<<<< HEAD
+=======
+            this.label26 = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
+            this.button16 = new System.Windows.Forms.Button();
+            this.button17 = new System.Windows.Forms.Button();
+            this.label32 = new System.Windows.Forms.Label();
+            this.label33 = new System.Windows.Forms.Label();
+            this.button8 = new System.Windows.Forms.Button();
+>>>>>>> c91f06b6bdc8483395f45d742e3dc0db211d7c10
             this.TabAccountant.SuspendLayout();
             this.tabUser.SuspendLayout();
             this.panel8.SuspendLayout();
@@ -379,7 +389,9 @@
             // 
             // tabAdmin
             // 
+            this.tabAdmin.Controls.Add(this.button8);
             this.tabAdmin.Controls.Add(this.button17);
+            this.tabAdmin.Controls.Add(this.button6);
             this.tabAdmin.Controls.Add(this.button16);
             this.tabAdmin.Controls.Add(this.button15);
             this.tabAdmin.Controls.Add(this.button5);
@@ -513,6 +525,7 @@
             this.button12.TabIndex = 3;
             this.button12.Text = "Wijzig";
             this.button12.UseVisualStyleBackColor = true;
+            this.button12.Click += new System.EventHandler(this.button12_Click);
             // 
             // label19
             // 
@@ -597,13 +610,14 @@
             // 
             // button11
             // 
-            this.button11.Location = new System.Drawing.Point(57, 249);
+            this.button11.Location = new System.Drawing.Point(40, 249);
             this.button11.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(75, 23);
+            this.button11.Size = new System.Drawing.Size(116, 37);
             this.button11.TabIndex = 3;
-            this.button11.Text = "button11";
+            this.button11.Text = "Voeg toe";
             this.button11.UseVisualStyleBackColor = true;
+            this.button11.Click += new System.EventHandler(this.button11_Click);
             // 
             // label12
             // 
@@ -639,11 +653,11 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(72, 140);
+            this.label11.Location = new System.Drawing.Point(61, 138);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(45, 17);
+            this.label11.Size = new System.Drawing.Size(84, 17);
             this.label11.TabIndex = 8;
-            this.label11.Text = "Naam";
+            this.label11.Text = "Achternaam";
             // 
             // label9
             // 
@@ -671,6 +685,7 @@
             this.button4.TabIndex = 3;
             this.button4.Text = "Voeg toe";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // label8
             // 
@@ -739,6 +754,7 @@
             this.button7.TabIndex = 3;
             this.button7.Text = "Wijzig";
             this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // label7
             // 
@@ -752,7 +768,6 @@
             // panel2
             // 
             this.panel2.Controls.Add(this.label28);
-            this.panel2.Controls.Add(this.button6);
             this.panel2.Controls.Add(this.label6);
             this.panel2.Location = new System.Drawing.Point(427, 6);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -771,13 +786,14 @@
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(40, 166);
+            this.button6.Location = new System.Drawing.Point(60, 264);
             this.button6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(120, 38);
             this.button6.TabIndex = 3;
             this.button6.Text = "Verwijderen";
             this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // label6
             // 
@@ -870,6 +886,79 @@
             this.label17.TabIndex = 0;
             this.label17.Text = "Inkomen Totaal";
             // 
+<<<<<<< HEAD
+=======
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(38, 12);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(62, 17);
+            this.label26.TabIndex = 19;
+            this.label26.Text = "User : 1 ";
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(53, 32);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(21, 17);
+            this.label28.TabIndex = 5;
+            this.label28.Text = "ID";
+            // 
+            // button16
+            // 
+            this.button16.Location = new System.Drawing.Point(255, 170);
+            this.button16.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button16.Name = "button16";
+            this.button16.Size = new System.Drawing.Size(120, 43);
+            this.button16.TabIndex = 13;
+            this.button16.Text = "Toevoegen";
+            this.button16.UseVisualStyleBackColor = true;
+            this.button16.Click += new System.EventHandler(this.button16_Click);
+            // 
+            // button17
+            // 
+            this.button17.Location = new System.Drawing.Point(255, 217);
+            this.button17.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button17.Name = "button17";
+            this.button17.Size = new System.Drawing.Size(120, 43);
+            this.button17.TabIndex = 14;
+            this.button17.Text = "Wijzigen";
+            this.button17.UseVisualStyleBackColor = true;
+            this.button17.Click += new System.EventHandler(this.button17_Click);
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Location = new System.Drawing.Point(77, 78);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(45, 17);
+            this.label32.TabIndex = 15;
+            this.label32.Text = "Naam";
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Location = new System.Drawing.Point(54, 138);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(84, 17);
+            this.label33.TabIndex = 16;
+            this.label33.Text = "Achternaam";
+            this.label33.Click += new System.EventHandler(this.label33_Click);
+            // 
+            // button8
+            // 
+            this.button8.Location = new System.Drawing.Point(255, 264);
+            this.button8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(120, 38);
+            this.button8.TabIndex = 15;
+            this.button8.Text = "Verwijderen";
+            this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
+            // 
+>>>>>>> c91f06b6bdc8483395f45d742e3dc0db211d7c10
             // GUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -982,6 +1071,7 @@
         private System.Windows.Forms.Button button17;
         private System.Windows.Forms.Label label33;
         private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.Button button8;
     }
 }
 

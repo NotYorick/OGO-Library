@@ -50,14 +50,14 @@ namespace Library
             return true;
         }
 
-        public void SetVoornaam()
+        public void SetVoornaam(String voor)
         {
-            
+            voornaam = voor;
         }
 
-        public void SetAchternaam()
+        public void SetAchternaam(String achter)
         {
-            
+            achternaam = achter;
         }
 
         public double GetKosten()
