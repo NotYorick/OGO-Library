@@ -82,7 +82,7 @@ namespace Library
 
             var selectedItem = (dynamic)listBox3.SelectedItem;
             label6.Text = selectedItem.getName();
-            label28.Text = selectedItem.GetArtikelNr();
+            label28.Text = selectedItem.GetArtikelNr().ToString();
 
         }
 
@@ -207,6 +207,39 @@ namespace Library
         #endregion
 
         private void label20_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        //Voeg Lid toe
+        private void button10_Click(object sender, EventArgs e)
+        {
+            panel4.Visible = true;
+        }
+        //Voeg Artikel toe
+        private void button16_Click(object sender, EventArgs e)
+        {
+            panel5.Visible = true;
+        }
+        //LID Wijzigen
+        private void button5_Click(object sender, EventArgs e)
+        {
+            var selectedItem = (dynamic)listBox2.SelectedItem;
+            panel3.Visible = true;
+            textBox5.Text = selectedItem.GetName();
+            textBox4.Text = selectedItem.GetName();
+        
+        }
+        //Artikel Wijzigen
+        private void button17_Click(object sender, EventArgs e)
+        {
+            var selectedItem = (dynamic)listBox3.SelectedItem;
+            panel6.Visible = true;
+            textBox8.Text = selectedItem.getName();
+            textBox2.Text = selectedItem.GetYear().ToString();
+        }
+
+        private void label33_Click(object sender, EventArgs e)
         {
 
         }

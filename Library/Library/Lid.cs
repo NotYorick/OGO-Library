@@ -90,6 +90,16 @@ namespace Library
             return voornaam + achternaam;
         }
 
+        public String GetVoornaam()
+        {
+            return voornaam;
+        }
+
+        public String GetAchternaam()
+        {
+            return achternaam;
+        }
+
         public List<Lening> GetLeenArtikelen()
         {
             
