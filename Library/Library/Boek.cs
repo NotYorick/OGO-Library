@@ -77,9 +77,10 @@ namespace Library
         public abstract double GetPrijs();
         
 
-        public void AddReserveringen()
+        public void AddReserveringen(Lid lid)
         {
-
+            reserveringen.Add(lid);
+            Console.WriteLine("Reservering toegevoegd van : " + lid);
         }
 
         public abstract int GetLeenDagen();

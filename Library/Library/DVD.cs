@@ -78,9 +78,10 @@ namespace Library
 
         public abstract int GetLeenDagen();
 
-        public void AddReserveringen()
+        public void AddReserveringen(Lid lid)
         {
-            
+            reserveringen.Add(lid);
+            Console.WriteLine("Reservering toegevoegd van : " + lid);
         }
 
     }

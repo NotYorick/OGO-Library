@@ -76,8 +76,10 @@ namespace Library
 
         public abstract double BerekenBoete(int dagen);
 
-        public void AddReserveringen()
+        public void AddReserveringen(Lid lid)
         {
+            reserveringen.Add(lid);
+            Console.WriteLine("Reservering toegevoegd van : " + lid);
 
         }
     }

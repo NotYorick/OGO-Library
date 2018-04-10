@@ -32,11 +32,7 @@ namespace Library
             
         }
 
-        public void Reserveren(Artikel artikel)
-        {
-            
-        }
-
+     
         public bool ArtikelLenen(Artikel artikel)
         {
             Lening lening = new Lening(artikel);
