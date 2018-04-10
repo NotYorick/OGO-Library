@@ -30,25 +30,15 @@ namespace Library
 
         public override double BerekenBoete(int dagen)
         {
-            double temp;
-            if (dagen % 7 == 0)
-            {
-                temp = dagen * boete;
-                return temp;
-            }
-            else
-            {
-                for (int i = dagen; dagen > 0; dagen--)
-                {
-                    if (dagen % 7 == 0)
-                    {
-                        temp = dagen * boete;
-                        return temp;
-                    }
-                }
+            decimal weeks;
 
-            }
-            return 0;
+            //Voor elke week of een deel daarvan moet €1,00 extra worden betaald
+            decimal temp = dagen / 7;
+            weeks = Math.Ceiling(temp);
+
+            int total = Convert.ToInt32(weeks);
+            
+            return total * boete;
         }
     }
 }

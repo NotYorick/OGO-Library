@@ -11,7 +11,7 @@ namespace Library
         private const double prijs = 2.00;
         private const int maxLeenDagen = 10;
         private int kortingsPercentage;
-        private const double boete = 1.50;
+        private const double boete = 3.50;
 
         public Klassiek(String naam, int artikelNr, int jaar) : base(naam,artikelNr,jaar)
         {
@@ -35,25 +35,15 @@ namespace Library
 
         public override double BerekenBoete(int dagen)
         {
-            double temp;
-            if (dagen % 7 == 0)
-            {
-                temp = dagen * boete;
-                return temp;
-            }
-            else
-            {
-                for (int i = dagen; dagen > 0; dagen--)
-                {
-                    if (dagen % 7 == 0)
-                    {
-                        temp = dagen * boete;
-                        return temp;
-                    }
-                }
+            decimal weeks;
 
-            }
-            return 0;
+            //Voor elke week of een deel daarvan moet €1,00 worden betaald
+            decimal temp = dagen / 7;
+            weeks = Math.Ceiling(temp);
+
+            int total = Convert.ToInt32(weeks);
+
+            return total * boete;
         }
     }
 }
