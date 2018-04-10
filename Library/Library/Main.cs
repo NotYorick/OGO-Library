@@ -43,22 +43,24 @@ namespace Library
 
         public void ArtikelVerwijderen(Artikel artikel)
         {
-            
+            artikelen.Remove(artikel);
         }
 
-        public void ArtikelToevoegen(Artikel artikel)
+        public void ArtikelToevoegen(String naam, int jaar, String soort)
         {
-            
+            Artikel lid = new Populair(naam, artikelen.Count, jaar);
+            leden.Add(lid);
         }
 
-        public void LidToevoegen(Lid lid)
+        public void LidToevoegen(String voornaam, String achternaam)
         {
-            
+            Lid lid = new Lid(voornaam,achternaam,leden.Count + 1);
+            leden.Add(lid);
         }
 
         public void LidVerwijderen(Lid lid)
         {
-            
+            leden.Remove(lid);
         }
 
         public double GetBoetes()

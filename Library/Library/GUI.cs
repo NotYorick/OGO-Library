@@ -226,8 +226,8 @@ namespace Library
         {
             var selectedItem = (dynamic)listBox2.SelectedItem;
             panel3.Visible = true;
-            textBox5.Text = selectedItem.GetName();
-            textBox4.Text = selectedItem.GetName();
+            textBox5.Text = selectedItem.GetVoornaam();
+            textBox4.Text = selectedItem.GetAchternaam();
         
         }
         //Artikel Wijzigen
@@ -242,6 +242,53 @@ namespace Library
         private void label33_Click(object sender, EventArgs e)
         {
 
+        }
+
+        //Wijzig lid uitvoering
+        private void button7_Click(object sender, EventArgs e)
+        {
+            var selectedItem = (dynamic)listBox2.SelectedItem;
+            selectedItem.SetVoornaam(textBox5.Text);
+            selectedItem.SetAchternaam(textBox4.Text);
+
+        }
+
+        //Wijzig artikel uitvoering
+        private void button12_Click(object sender, EventArgs e)
+        {
+            var selectedItem = (dynamic)listBox3.SelectedItem;
+            selectedItem.setName(textBox8.Text);
+            selectedItem.SetYear(Int32.Parse(textBox2.Text));
+        }
+
+        //Toevoegen lid uitvoering 
+        private void button4_Click(object sender, EventArgs e)
+        {
+            main.LidToevoegen(label3.Text, label6.Text);
+            UpdateDataset();
+        }
+
+        //Toevoegen artikelen uitvoering
+        private void button11_Click(object sender, EventArgs e)
+        {
+            main.ArtikelToevoegen(textBox3.Text, Int32.Parse(textBox6.Text),textBox7.Text);
+            UpdateDataset();
+        }
+
+        //Verwijder lid
+        private void button6_Click(object sender, EventArgs e)
+        {
+            var selectedItem = (dynamic)listBox2.SelectedItem;
+            main.LidVerwijderen(selectedItem);
+            UpdateDataset();
+        }
+
+        //Verwijder artikel
+        private void button8_Click(object sender, EventArgs e)
+        {
+            var selectedItem = (dynamic)listBox3.SelectedItem;
+            main.ArtikelVerwijderen(selectedItem);
+            UpdateDataset();
         }
     }
 }
