@@ -17,7 +17,7 @@ namespace Library
         private int klantnr;
         private ArrayList leenartikelen;
         private double leengeld;
-        private double boetes;
+        private double betaaldeBoetes;
 
         public Lid(String voornaam, String achternaam, int klantNr)
         {
@@ -59,19 +59,21 @@ namespace Library
 
         public double GetKosten()
         {
-            return boetes + leengeld;
+            return betaaldeBoetes + leengeld;
         }
 
         public double GetBoete()
         {
+            double totaalboetes = 0;
             foreach (Lening len in leenartikelen )
             {
-                boetes += len.BerekenBoetes();
+                totaalboetes += len.BerekenBoetes();
             }
-            Debug.WriteLine("boete:" + boetes);
-            return boetes;
+            Debug.WriteLine("boete:" + totaalboetes);
+            totaalboetes += betaaldeBoetes;
+            return totaalboetes;
         }
-
+        
         public double GetLeen()
         {
             foreach (Lening len in leenartikelen)

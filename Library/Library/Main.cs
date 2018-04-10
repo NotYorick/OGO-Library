@@ -31,7 +31,7 @@ namespace Library
             artikelen.Add(new Roman("Daan5", 4, 2001));
             artikelen.Add(new Studieboek("Daan5", 5, 1993));
             artikelen.Add(new Populair("Daan5", 5, 1998));
-            artikelen.Add(new Klasiek("Daan5", 6, 1999));
+            artikelen.Add(new Klassiek("Daan5", 6, 1999));
 
 
         }

@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace Library
 {
-    class Klasiek : CD
+    class Klassiek : CD
     {
         private const double prijs = 2.00;
         private const int maxLeenDagen = 10;
         private int kortingsPercentage;
-        private const double boete = 2.00;
+        private const double boete = 1.50;
 
-        public Klasiek(String naam, int artikelNr, int jaar) : base(naam,artikelNr,jaar)
+        public Klassiek(String naam, int artikelNr, int jaar) : base(naam,artikelNr,jaar)
         {
 
         }
