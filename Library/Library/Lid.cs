@@ -22,6 +22,9 @@ namespace Library
         public Lid(String voornaam, String achternaam, int klantNr)
         {
             leenartikelen = new ArrayList();
+            this.voornaam = voornaam;
+            this.achternaam = achternaam;
+            this.klantnr = klantNr;
         }
 
         public void BoeteBetalen()
@@ -87,6 +90,16 @@ namespace Library
         public String GetName()
         {
             return voornaam + achternaam;
+        }
+
+        public String GetVoornaam()
+        {
+            return voornaam;
+        }
+
+        public String GetAchternaam()
+        {
+            return achternaam;
         }
 
         public List<Lening> GetLeenArtikelen()

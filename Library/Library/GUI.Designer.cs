@@ -81,8 +81,6 @@
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.button7 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.button10 = new System.Windows.Forms.Button();
@@ -98,6 +96,11 @@
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
+            this.button16 = new System.Windows.Forms.Button();
+            this.button17 = new System.Windows.Forms.Button();
+            this.label32 = new System.Windows.Forms.Label();
+            this.label33 = new System.Windows.Forms.Label();
             this.TabAccountant.SuspendLayout();
             this.tabUser.SuspendLayout();
             this.panel8.SuspendLayout();
@@ -366,7 +369,11 @@
             // 
             // tabAdmin
             // 
+            this.tabAdmin.Controls.Add(this.button17);
+            this.tabAdmin.Controls.Add(this.button16);
             this.tabAdmin.Controls.Add(this.button15);
+            this.tabAdmin.Controls.Add(this.button5);
+            this.tabAdmin.Controls.Add(this.button10);
             this.tabAdmin.Controls.Add(this.panel6);
             this.tabAdmin.Controls.Add(this.panel5);
             this.tabAdmin.Controls.Add(this.panel4);
@@ -387,7 +394,7 @@
             // 
             // button15
             // 
-            this.button15.Location = new System.Drawing.Point(31, 245);
+            this.button15.Location = new System.Drawing.Point(743, 18);
             this.button15.Name = "button15";
             this.button15.Size = new System.Drawing.Size(116, 33);
             this.button15.TabIndex = 12;
@@ -445,12 +452,12 @@
             // 
             // button12
             // 
-            this.button12.Location = new System.Drawing.Point(63, 249);
+            this.button12.Location = new System.Drawing.Point(43, 249);
             this.button12.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(75, 23);
+            this.button12.Size = new System.Drawing.Size(120, 37);
             this.button12.TabIndex = 3;
-            this.button12.Text = "button12";
+            this.button12.Text = "Wijzig";
             this.button12.UseVisualStyleBackColor = true;
             // 
             // label19
@@ -622,11 +629,11 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.label33);
+            this.panel3.Controls.Add(this.label32);
             this.panel3.Controls.Add(this.textBox4);
             this.panel3.Controls.Add(this.textBox5);
             this.panel3.Controls.Add(this.button7);
-            this.panel3.Controls.Add(this.button8);
-            this.panel3.Controls.Add(this.button9);
             this.panel3.Controls.Add(this.label7);
             this.panel3.Location = new System.Drawing.Point(220, 297);
             this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -636,7 +643,7 @@
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(44, 146);
+            this.textBox4.Location = new System.Drawing.Point(44, 160);
             this.textBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(111, 22);
@@ -644,7 +651,7 @@
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(44, 71);
+            this.textBox5.Location = new System.Drawing.Point(44, 105);
             this.textBox5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(111, 22);
@@ -652,33 +659,13 @@
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(57, 249);
+            this.button7.Location = new System.Drawing.Point(35, 249);
             this.button7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(75, 23);
+            this.button7.Size = new System.Drawing.Size(123, 37);
             this.button7.TabIndex = 3;
-            this.button7.Text = "button7";
+            this.button7.Text = "Wijzig";
             this.button7.UseVisualStyleBackColor = true;
-            // 
-            // button8
-            // 
-            this.button8.Location = new System.Drawing.Point(57, 174);
-            this.button8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(75, 23);
-            this.button8.TabIndex = 2;
-            this.button8.Text = "button8";
-            this.button8.UseVisualStyleBackColor = true;
-            // 
-            // button9
-            // 
-            this.button9.Location = new System.Drawing.Point(57, 100);
-            this.button9.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(75, 23);
-            this.button9.TabIndex = 1;
-            this.button9.Text = "button9";
-            this.button9.UseVisualStyleBackColor = true;
             // 
             // label7
             // 
@@ -691,9 +678,8 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.button10);
+            this.panel2.Controls.Add(this.label28);
             this.panel2.Controls.Add(this.button6);
-            this.panel2.Controls.Add(this.button5);
             this.panel2.Controls.Add(this.label6);
             this.panel2.Location = new System.Drawing.Point(427, 6);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -703,17 +689,18 @@
             // 
             // button10
             // 
-            this.button10.Location = new System.Drawing.Point(40, 103);
+            this.button10.Location = new System.Drawing.Point(60, 170);
             this.button10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(120, 43);
             this.button10.TabIndex = 4;
             this.button10.Text = "Toevoegen";
             this.button10.UseVisualStyleBackColor = true;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(40, 218);
+            this.button6.Location = new System.Drawing.Point(40, 166);
             this.button6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(120, 38);
@@ -723,13 +710,14 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(40, 164);
+            this.button5.Location = new System.Drawing.Point(60, 217);
             this.button5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(120, 43);
             this.button5.TabIndex = 2;
             this.button5.Text = "Wijzigen";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // label6
             // 
@@ -831,6 +819,56 @@
             this.label26.TabIndex = 19;
             this.label26.Text = "User : 1 ";
             // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(53, 32);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(21, 17);
+            this.label28.TabIndex = 5;
+            this.label28.Text = "ID";
+            // 
+            // button16
+            // 
+            this.button16.Location = new System.Drawing.Point(255, 170);
+            this.button16.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button16.Name = "button16";
+            this.button16.Size = new System.Drawing.Size(120, 43);
+            this.button16.TabIndex = 13;
+            this.button16.Text = "Toevoegen";
+            this.button16.UseVisualStyleBackColor = true;
+            this.button16.Click += new System.EventHandler(this.button16_Click);
+            // 
+            // button17
+            // 
+            this.button17.Location = new System.Drawing.Point(255, 217);
+            this.button17.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button17.Name = "button17";
+            this.button17.Size = new System.Drawing.Size(120, 43);
+            this.button17.TabIndex = 14;
+            this.button17.Text = "Wijzigen";
+            this.button17.UseVisualStyleBackColor = true;
+            this.button17.Click += new System.EventHandler(this.button17_Click);
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Location = new System.Drawing.Point(77, 78);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(45, 17);
+            this.label32.TabIndex = 15;
+            this.label32.Text = "Naam";
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Location = new System.Drawing.Point(54, 138);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(84, 17);
+            this.label33.TabIndex = 16;
+            this.label33.Text = "Achternaam";
+            this.label33.Click += new System.EventHandler(this.label33_Click);
+            // 
             // GUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -904,8 +942,6 @@
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button button10;
@@ -940,6 +976,11 @@
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.Button button15;
         private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Button button16;
+        private System.Windows.Forms.Button button17;
+        private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.Label label32;
     }
 }
 
