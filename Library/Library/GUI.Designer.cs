@@ -98,6 +98,7 @@
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
             this.TabAccountant.SuspendLayout();
             this.tabUser.SuspendLayout();
             this.panel8.SuspendLayout();
@@ -691,6 +692,7 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.label28);
             this.panel2.Controls.Add(this.button10);
             this.panel2.Controls.Add(this.button6);
             this.panel2.Controls.Add(this.button5);
@@ -831,6 +833,15 @@
             this.label26.TabIndex = 19;
             this.label26.Text = "User : 1 ";
             // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(53, 32);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(21, 17);
+            this.label28.TabIndex = 5;
+            this.label28.Text = "ID";
+            // 
             // GUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -940,6 +951,7 @@
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.Button button15;
         private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Label label28;
     }
 }
 

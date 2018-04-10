@@ -70,20 +70,19 @@ namespace Library
         private void listBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
 
-            var selectedItem = (dynamic)listBox4.SelectedItem;
-            label24.Text = selectedItem.getName();
-            label25.Text = selectedItem.GetArtikelNr().ToString();
-            label27.Text = selectedItem.GetYear().ToString();
+            var selectedItem = (dynamic)listBox2.SelectedItem;
+            label6.Text = selectedItem.GetName();
+            label28.Text = selectedItem.GetKlantNr().ToString();
+
 
         }
 
         private void listBox3_SelectedIndexChanged(object sender, EventArgs e)
         {
 
-            var selectedItem = (dynamic)listBox4.SelectedItem;
-            label24.Text = selectedItem.getName();
-            label25.Text = selectedItem.GetArtikelNr().ToString();
-            label27.Text = selectedItem.GetYear().ToString();
+            var selectedItem = (dynamic)listBox3.SelectedItem;
+            label6.Text = selectedItem.getName();
+            label28.Text = selectedItem.GetArtikelNr();
 
         }
 
