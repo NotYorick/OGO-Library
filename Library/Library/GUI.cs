@@ -244,16 +244,16 @@ namespace Library
 
         }
 
-<<<<<<< HEAD
         private void button14_Click(object sender, EventArgs e)
         {
-            var selectedItem = (dynamic)listBox4.SelectedItem;
+            var selectedItem = (dynamic) listBox4.SelectedItem;
             Artikel curArt = main.GetArtikel(selectedItem.getArtikelNr());
 
             Lid lid = main.GetLid(0);
 
             lid.Reserveren(curArt);
-=======
+        }
+
         //Wijzig lid uitvoering
         private void button7_Click(object sender, EventArgs e)
         {
@@ -299,7 +299,7 @@ namespace Library
             var selectedItem = (dynamic)listBox3.SelectedItem;
             main.ArtikelVerwijderen(selectedItem);
             UpdateDataset();
->>>>>>> c91f06b6bdc8483395f45d742e3dc0db211d7c10
+
         }
     }
 }
