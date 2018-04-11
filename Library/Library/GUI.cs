@@ -71,8 +71,8 @@ namespace Library
         {
 
             var selectedItem = (dynamic)listBox2.SelectedItem;
-            label6.Text = selectedItem.GetName();
-            label28.Text = selectedItem.GetKlantNr().ToString();
+            label6.Text = "Naam: " + selectedItem.GetName();
+            label28.Text = "ID: " + selectedItem.GetKlantNr().ToString();
 
 
         }
@@ -81,8 +81,8 @@ namespace Library
         {
 
             var selectedItem = (dynamic)listBox3.SelectedItem;
-            label6.Text = selectedItem.getName();
-            label28.Text = selectedItem.GetArtikelNr().ToString();
+            label6.Text = "Naam: " + selectedItem.getName();
+            label28.Text = "ID: " + selectedItem.GetArtikelNr().ToString();
 
         }
 
@@ -149,9 +149,9 @@ namespace Library
                 inkomen_leen += li.GetLeen();
             }
 
-            label17.Text = "Totale inkomen: " + inkomen.ToString();
-            label16.Text = "Totale Boetes: " + inkomen_boete.ToString();
-            label18.Text = "Totale Leengeld: " + inkomen_leen.ToString();
+            label17.Text = inkomen.ToString();
+            label16.Text = inkomen_boete.ToString();
+            label18.Text = inkomen_leen.ToString();
         
         }
 
@@ -259,7 +259,7 @@ namespace Library
             var selectedItem = (dynamic)listBox2.SelectedItem;
             selectedItem.SetVoornaam(textBox5.Text);
             selectedItem.SetAchternaam(textBox4.Text);
-
+            panel3.Visible = false;
         }
 
         //Wijzig artikel uitvoering
@@ -268,20 +268,24 @@ namespace Library
             var selectedItem = (dynamic)listBox3.SelectedItem;
             selectedItem.setName(textBox8.Text);
             selectedItem.SetYear(Int32.Parse(textBox2.Text));
+            panel6.Visible = false;
         }
 
         //Toevoegen lid uitvoering 
         private void button4_Click(object sender, EventArgs e)
         {
-            main.LidToevoegen(label3.Text, label6.Text);
+            main.LidToevoegen(textBox3.Text, textBox6.Text);
             UpdateDataset();
+            panel4.Visible = false;
+
         }
 
         //Toevoegen artikelen uitvoering
         private void button11_Click(object sender, EventArgs e)
         {
-            main.ArtikelToevoegen(textBox3.Text, Int32.Parse(textBox6.Text),textBox7.Text);
+            main.ArtikelToevoegen(textBox9.Text, Int32.Parse(textBox1.Text) ,textBox7.Text);
             UpdateDataset();
+            panel5.Visible = false;
         }
 
         //Verwijder lid
@@ -299,6 +303,36 @@ namespace Library
             main.ArtikelVerwijderen(selectedItem);
             UpdateDataset();
 
+        }
+
+        private void textBox7_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+        //Betaal Button
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            panel1.Visible = false;
         }
     }
 }

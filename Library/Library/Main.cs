@@ -48,8 +48,30 @@ namespace Library
 
         public void ArtikelToevoegen(String naam, int jaar, String soort)
         {
-            Artikel lid = new Populair(naam, artikelen.Count, jaar);
-            leden.Add(lid);
+            Artikel art = new A(null,0,0);
+            switch (soort)
+            {
+                case "a":
+                    art = new A(naam, artikelen.Count, jaar);
+                    break;
+                case "b":
+                    art = new B(naam, artikelen.Count, jaar);
+                    break;
+                case "populair":
+                    art = new Populair(naam, artikelen.Count, jaar);
+                    break;
+                case "klassiek":
+                    art = new Klassiek(naam, artikelen.Count, jaar);
+                    break;
+                case "roman":
+                    art = new Roman(naam, artikelen.Count, jaar);
+                    break;
+                case "studieboek":
+                    art = new Studieboek(naam, artikelen.Count, jaar);
+                    break;
+
+            }
+            artikelen.Add(art);
         }
 
         public void LidToevoegen(String voornaam, String achternaam)
