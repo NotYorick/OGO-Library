@@ -48,11 +48,15 @@ namespace Library
             Lid lid = main.GetLid(0);       
             List<Lening> test = lid.GetLeenArtikelen();
 
+            //leden
             List<Lid> leden = main.GetLeden();
             listBox2.DataSource = leden;
 
             List<Lening> data_leen = main.GetLid(0).GetLeenArtikelen();
             listBox1.DataSource = data_leen;
+
+            List<Artikel> data_inge = main.GetAllIngeleverdeArtikelen();
+            listBox5.DataSource = data_inge;
 
         }
 
@@ -65,6 +69,13 @@ namespace Library
             label25.Text = selectedItem.GetArtikelNr().ToString();
             label27.Text = selectedItem.GetYear().ToString();
 
+        }
+
+        private void listBox5_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var selectedItem = (dynamic)listBox5.SelectedItem;
+            label6.Text = "Naam: " + selectedItem.getName();
+            label28.Text = "ID: " + selectedItem.GetArtikelNr().ToString();
         }
 
         private void listBox2_SelectedIndexChanged(object sender, EventArgs e)
@@ -116,7 +127,17 @@ namespace Library
             if (main.GetLid(0).GetBoete() > 0)
             {
                 //activeer panel boete!!
-                label20.Text = main.GetLid(0).GetBoete().ToString();
+                main.GetLid(0).GetBoete();
+                foreach(Lening leen in main.GetLid(0).GetLeenArtikelen())
+                {
+                    
+                    if (leen.GetArtikel() == selectedItem.GetArtikel())
+                    {
+                        
+                        label20.Text = leen.BerekenBoetes().ToString();
+                    }
+                }
+                
                 panel1.Visible = true;
             }
             else
@@ -126,7 +147,8 @@ namespace Library
                 {
                     if (art.GetArtikelNr() == selectedItem.GetArtikel().GetArtikelNr())
                     {
-                        art.ChangeStatus();
+                        main.ArtikelInleveren(art);
+                        
                     }
                    
                 }
@@ -145,7 +167,7 @@ namespace Library
 
 
                 inkomen += li.GetKosten();
-                inkomen_boete += li.GetBoete();
+                inkomen_boete += li.GetBetaaldeBoetes();
                 inkomen_leen += li.GetLeen();
             }
 
@@ -327,12 +349,32 @@ namespace Library
         //Betaal Button
         private void button3_Click_1(object sender, EventArgs e)
         {
+            var selectedItem = (dynamic)listBox1.SelectedItem;
+            main.GetLid(0).BoeteBetalen(selectedItem.GetArtikel());
+            main.GetLid(0).Inleveren(selectedItem);
+            foreach (Artikel art in main.GetAllArtikelen())
+            {
+                if (art.GetArtikelNr() == selectedItem.GetArtikel().GetArtikelNr())
+                {
+                    main.ArtikelInleveren(art);
 
+                }
+
+            }
+            panel1.Visible = false;
+            UpdateDataset();
         }
 
         private void button1_Click_1(object sender, EventArgs e)
         {
             panel1.Visible = false;
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            var selectedItem = (dynamic)listBox5.SelectedItem;
+            main.ArtikelVerwerken(selectedItem);
+            UpdateDataset();
         }
     }
 }

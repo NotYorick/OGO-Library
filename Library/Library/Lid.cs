@@ -27,9 +27,17 @@ namespace Library
             this.klantnr = klantNr;
         }
 
-        public void BoeteBetalen()
+        public void BoeteBetalen(Artikel art)
         {
-            
+            Debug.WriteLine("-----------------------------");
+            foreach (Lening leen in leenartikelen)
+            {
+                if (leen.GetArtikel() == art)
+                {
+                    betaaldeBoetes += leen.BerekenBoetes();
+                    leen.resetBoete();
+                }
+            }
         }
 
      
@@ -61,6 +69,10 @@ namespace Library
             return betaaldeBoetes + leengeld;
         }
 
+        public double GetBetaaldeBoetes()
+        {
+            return betaaldeBoetes;
+        }
         public double GetBoete()
         {
             double totaalboetes = 0;
@@ -70,6 +82,7 @@ namespace Library
             }
             Debug.WriteLine("boete:" + totaalboetes);
             totaalboetes += betaaldeBoetes;
+
             return totaalboetes;
         }
         

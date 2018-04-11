@@ -51,5 +51,10 @@ namespace Library
             return artikel;
         }
 
+        public void resetBoete()
+        {
+            boete = 0;
+        }
+
     }
 }

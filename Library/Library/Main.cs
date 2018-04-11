@@ -23,22 +23,24 @@ namespace Library
 
             leden.Add(new Lid("HENK", "Sts", 0));
             leden.Add(new Lid("Daan", "Smits", 1));
-            leden.Add(new Lid("Daan", "Ss", 2));
+            leden.Add(new Lid("sjaak", "Ss", 2));
 
             artikelen.Add(new Roman("Harry potter",1,2003));
-            artikelen.Add(new Roman("Cool", 2, 2012));
-            artikelen.Add(new Roman("Daan3", 3, 2000));
-            artikelen.Add(new Roman("Daan5", 4, 2001));
-            artikelen.Add(new Studieboek("Daan5", 5, 1993));
-            artikelen.Add(new Populair("Daan5", 5, 1998));
-            artikelen.Add(new Klassiek("Daan5", 6, 1999));
+            artikelen.Add(new Roman("Flash", 2, 2012));
+            artikelen.Add(new Roman("Verri", 3, 2000));
+            artikelen.Add(new Roman("hoff", 4, 2001));
+            artikelen.Add(new Studieboek("ingepakt", 5, 1993));
+            artikelen.Add(new Populair("top4", 5, 1998));
+            artikelen.Add(new Klassiek("topoud", 6, 1999));
 
 
         }
 
-        public void ArtikelVerwerken(int artNr)
+        public void ArtikelVerwerken(Artikel artikel)
         {
-            
+            artikel.ChangeStatus();
+            //reservering
+            ingeleverdeArtikelen.Remove(artikel);
         }
 
         public void ArtikelVerwijderen(Artikel artikel)
@@ -153,9 +155,17 @@ namespace Library
             return lijst;
         }
 
-        public void ArtikelInleveren()
+        public List<Artikel> GetAllIngeleverdeArtikelen()
         {
-            
+
+            List<Artikel> lijst = ingeleverdeArtikelen.Cast<Artikel>().ToList();
+
+            return lijst;
+        }
+
+        public void ArtikelInleveren(Artikel artikel)
+        {
+            ingeleverdeArtikelen.Add(artikel);
         }
 
         public List<Lid> GetLeden()
