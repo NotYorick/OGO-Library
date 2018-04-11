@@ -22,6 +22,7 @@ namespace Library
 
         protected CD(String naam, int artikelNr, int jaar)
         {
+            this.reserveringen = new ArrayList();
             this.naam = naam;
             this.artikelNr = artikelNr;
             this.jaar = jaar;

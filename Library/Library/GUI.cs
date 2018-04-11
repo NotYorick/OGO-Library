@@ -99,7 +99,7 @@ namespace Library
         private void button13_Click(object sender, EventArgs e)
         {
             var selectedItem = (dynamic)listBox4.SelectedItem;
-            if (selectedItem.GetStatus() == "Aanwezig")
+            if (selectedItem.GetStatus() == "Aanwezig" && main.GetLid(0).GetLeenArtikelen().Count < 6)
             {
                 main.GetLid(0).ArtikelLenen(selectedItem);
                 selectedItem.ChangeStatus();
