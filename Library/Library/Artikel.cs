@@ -15,7 +15,7 @@ namespace Library
         String GetStatus(); 
         void ChangeStatus();
         double GetPrijs();
-        void AddReserveringen();
+        void AddReserveringen(Lid lid);
         int GetArtikelNr();
         int GetLeenDagen();
         double BerekenBoete(int dagen);
