@@ -970,7 +970,7 @@
             // 
             this.label36.AutoSize = true;
             this.label36.Font = new System.Drawing.Font("Verdana", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label36.Location = new System.Drawing.Point(315, 72);
+            this.label36.Location = new System.Drawing.Point(321, 72);
             this.label36.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label36.Name = "label36";
             this.label36.Size = new System.Drawing.Size(375, 46);
@@ -981,7 +981,7 @@
             // 
             this.label37.AutoSize = true;
             this.label37.Font = new System.Drawing.Font("Verdana", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label37.Location = new System.Drawing.Point(315, 160);
+            this.label37.Location = new System.Drawing.Point(311, 160);
             this.label37.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label37.Name = "label37";
             this.label37.Size = new System.Drawing.Size(385, 46);
@@ -992,23 +992,23 @@
             // 
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Verdana", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(723, 26);
+            this.label18.Location = new System.Drawing.Point(719, 26);
             this.label18.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(148, 46);
+            this.label18.Size = new System.Drawing.Size(47, 46);
             this.label18.TabIndex = 2;
-            this.label18.Text = "Lenen";
+            this.label18.Text = "0";
             // 
             // label16
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Verdana", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(729, 72);
+            this.label16.Location = new System.Drawing.Point(719, 72);
             this.label16.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(142, 46);
+            this.label16.Size = new System.Drawing.Size(47, 46);
             this.label16.TabIndex = 1;
-            this.label16.Text = "Boete";
+            this.label16.Text = "0";
             // 
             // label17
             // 
@@ -1017,9 +1017,9 @@
             this.label17.Location = new System.Drawing.Point(719, 160);
             this.label17.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(152, 46);
+            this.label17.Size = new System.Drawing.Size(47, 46);
             this.label17.TabIndex = 0;
-            this.label17.Text = "Totaal";
+            this.label17.Text = "0";
             // 
             // button9
             // 

@@ -32,6 +32,7 @@ namespace Library
             listBox3.SelectedIndexChanged += new System.EventHandler(listBox3_SelectedIndexChanged);
 
 
+
             #endregion
 
         }
@@ -110,50 +111,56 @@ namespace Library
         private void button13_Click(object sender, EventArgs e)
         {
             var selectedItem = (dynamic)listBox4.SelectedItem;
-            if (selectedItem.GetStatus() == "Aanwezig" && main.GetLid(0).GetLeenArtikelen().Count < 6)
+            if (selectedItem != null)
             {
-                main.GetLid(0).ArtikelLenen(selectedItem);
-                selectedItem.ChangeStatus();
-                
+                if (selectedItem.GetStatus() == "Aanwezig" && main.GetLid(0).GetLeenArtikelen().Count < 6)
+                {
+                    main.GetLid(0).ArtikelLenen(selectedItem);
+                    selectedItem.ChangeStatus();
 
-                UpdateDataset();
+
+                    UpdateDataset();
+                }
             }
-            
         }
         //inlever button
         private void button2_Click(object sender, EventArgs e)
         {
             var selectedItem = (dynamic)listBox1.SelectedItem;
-            if (main.GetLid(0).GetBoete() > 0)
+            if (selectedItem != null)
             {
-                //activeer panel boete!!
-                main.GetLid(0).GetBoete();
-                foreach(Lening leen in main.GetLid(0).GetLeenArtikelen())
+                if (main.GetLid(0).GetBoete() > 0)
                 {
-                    
-                    if (leen.GetArtikel() == selectedItem.GetArtikel())
+                    //activeer panel boete!!
+                    main.GetLid(0).GetBoete();
+                    foreach (Lening leen in main.GetLid(0).GetLeenArtikelen())
                     {
-                        
-                        label20.Text = leen.BerekenBoetes().ToString();
+
+                        if (leen.GetArtikel() == selectedItem.GetArtikel())
+                        {
+
+                            label20.Text = leen.BerekenBoetes().ToString();
+                        }
+                    }
+
+                    panel1.Visible = true;
+                }
+                else
+                {
+                    main.GetLid(0).Inleveren(selectedItem);
+                    foreach (Artikel art in main.GetAllArtikelen())
+                    {
+                        if (art.GetArtikelNr() == selectedItem.GetArtikel().GetArtikelNr())
+                        {
+                            main.ArtikelInleveren(art);
+
+                        }
+
                     }
                 }
-                
-                panel1.Visible = true;
+                UpdateDataset();
             }
-            else
-            {
-                main.GetLid(0).Inleveren(selectedItem);
-                foreach (Artikel art in main.GetAllArtikelen())
-                {
-                    if (art.GetArtikelNr() == selectedItem.GetArtikel().GetArtikelNr())
-                    {
-                        main.ArtikelInleveren(art);
-                        
-                    }
-                   
-                }
-            }
-            UpdateDataset();
+            
         }
         //Volgende dag button
         private void button15_Click(object sender, EventArgs e)
@@ -247,18 +254,23 @@ namespace Library
         private void button5_Click(object sender, EventArgs e)
         {
             var selectedItem = (dynamic)listBox2.SelectedItem;
-            panel3.Visible = true;
-            textBox5.Text = selectedItem.GetVoornaam();
-            textBox4.Text = selectedItem.GetAchternaam();
-        
+            if (selectedItem != null)
+            {
+                panel3.Visible = true;
+                textBox5.Text = selectedItem.GetVoornaam();
+                textBox4.Text = selectedItem.GetAchternaam();
+            }
         }
         //Artikel Wijzigen
         private void button17_Click(object sender, EventArgs e)
         {
             var selectedItem = (dynamic)listBox3.SelectedItem;
-            panel6.Visible = true;
-            textBox8.Text = selectedItem.getName();
-            textBox2.Text = selectedItem.GetYear().ToString();
+            if (selectedItem != null)
+            {
+                panel6.Visible = true;
+                textBox8.Text = selectedItem.getName();
+                textBox2.Text = selectedItem.GetYear().ToString();
+            }
         }
 
         private void label33_Click(object sender, EventArgs e)
@@ -373,8 +385,12 @@ namespace Library
         private void button9_Click(object sender, EventArgs e)
         {
             var selectedItem = (dynamic)listBox5.SelectedItem;
-            main.ArtikelVerwerken(selectedItem);
-            UpdateDataset();
+            if (selectedItem != null)
+            {
+                main.ArtikelVerwerken(selectedItem);
+                UpdateDataset();
+            }
+            
         }
     }
 }
