@@ -45,7 +45,11 @@ namespace Library
 
         public void ArtikelVerwijderen(Artikel artikel)
         {
-            artikelen.Remove(artikel);
+            if (artikel.GetStatus() == "Aanwezig")
+            {
+                artikelen.Remove(artikel);
+            }
+            
         }
 
         public void ArtikelToevoegen(String naam, int jaar, String soort)
@@ -84,7 +88,10 @@ namespace Library
 
         public void LidVerwijderen(Lid lid)
         {
-            leden.Remove(lid);
+            if (lid.GetKosten() <= 0)
+            {
+                leden.Remove(lid);
+            }        
         }
 
         public double GetBoetes()
